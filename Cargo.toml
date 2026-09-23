@@ -1,0 +1,22 @@
+[package]
+name = "mcface"
+version = "0.1.0"
+edition = "2024"
+description = "Show Minecraft skin faces in the terminal"
+keywords = ["minecraft", "skin", "terminal", "cli"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+base64 = "0.23.1"
+clap = { version = "4.6.7", features = ["derive"] }
+fastrand = "2.5.0"
+libc = "0.2.189"
+png = "0.18.1"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = { version = "1.0.151", features = ["preserve_order"] }
+ureq = "3.4.2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
