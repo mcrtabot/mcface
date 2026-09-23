@@ -14,6 +14,20 @@ mcface --all -m half                          # every built-in character with it
 
 ## Install
 
+macOS / Linux:
+
+```sh
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/mcrtabot/mcface/releases/latest/download/mcface-installer.sh | sh
+```
+
+Windows (PowerShell):
+
+```powershell
+powershell -ExecutionPolicy Bypass -c "irm https://github.com/mcrtabot/mcface/releases/latest/download/mcface-installer.ps1 | iex"
+```
+
+Prebuilt binaries are also on the [Releases](https://github.com/mcrtabot/mcface/releases) page. With a Rust toolchain:
+
 ```sh
 cargo install --git https://github.com/mcrtabot/mcface
 ```
@@ -73,5 +87,7 @@ cargo run --example gen_faces -- ex/assets/minecraft/textures/entity --preview p
 ```
 
 `--preview` also writes 16x PNGs for checking the result.
+
+Releases are built by [dist](https://github.com/axodotdev/cargo-dist): bump `version` in `Cargo.toml`, then push a `vX.Y.Z` tag.
 
 The demo GIF is recorded with [VHS](https://github.com/charmbracelet/vhs) and ffmpeg: `docs/demo.sh`.
